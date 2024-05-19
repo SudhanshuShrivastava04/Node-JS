@@ -1,9 +1,9 @@
 const fs = require("fs");
 
-//write file Sync
+//write file Sync / blocking
 fs.writeFileSync("./test01.txt", "Test sync file system"); //blocking
 
-//write file Async
+//write file Async / non - blocking
 fs.writeFile("./test02.txt", "Test async file system", (err) => {
   if (err) {
     console.log(err);
