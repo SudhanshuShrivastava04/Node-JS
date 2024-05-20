@@ -1,4 +1,4 @@
-const {addFn,subFn} = require("./math-module");
+import { addFn, subFn } from "./math-module";
 
 console.log("Welcome to Node JS world");
 

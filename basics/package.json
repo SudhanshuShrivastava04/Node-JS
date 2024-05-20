@@ -8,5 +8,6 @@
     "start": "node hello.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }

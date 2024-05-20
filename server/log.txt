@@ -1,0 +1,12 @@
+## Logs
+
+5/20/2024: / New request recieved 
+5/20/2024: /favicon.ico New request recieved 
+5/20/2024: / New request recieved 
+5/20/2024: /favicon.ico New request recieved 
+5/20/2024: /about New request recieved 
+5/20/2024: / New request recieved 
+5/20/2024: /favicon.ico New request recieved 
+5/20/2024: /home New request recieved 
+5/20/2024: /favicon.ico New request recieved 
+5/20/2024: /about New request recieved 
