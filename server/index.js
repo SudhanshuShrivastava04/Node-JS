@@ -2,7 +2,8 @@ import { createServer } from "http";
 import fs from "fs";
 import url from "url";
 
-const myServer = createServer((req, res) => {
+//express will handle these http methods for every route
+const handler = (req, res) => {
   if (req.url == "/favicon.ico") return res.end();
 
   const log = `${new Date().toLocaleDateString()}: ${req.method} ${
@@ -26,7 +27,7 @@ const myServer = createServer((req, res) => {
         break;
       case "/signup":
         if (req.method === "GET") res.end("Here is the signup page");
-        else if(req.method === "POST"){
+        else if (req.method === "POST") {
           // db query
           res.end("You have been signed up");
         }
@@ -36,6 +37,7 @@ const myServer = createServer((req, res) => {
         break;
     }
   });
-});
+};
+const myServer = createServer(handler);
 
 myServer.listen(8080, () => console.log("Server started!"));
