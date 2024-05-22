@@ -1,27 +1,8 @@
-## Logs
-
-5/20/2024: / New request recieved 
-5/20/2024: /favicon.ico New request recieved 
-5/20/2024: / New request recieved 
-5/20/2024: /favicon.ico New request recieved 
-5/20/2024: /about New request recieved 
-5/20/2024: / New request recieved 
-5/20/2024: /favicon.ico New request recieved 
-5/20/2024: /home New request recieved 
-5/20/2024: /favicon.ico New request recieved 
-5/20/2024: /about New request recieved 
-5/22/2024: /about New request recieved 
-5/22/2024: / New request recieved 
-5/22/2024: /favicon.ico New request recieved 
-5/22/2024: / New request recieved 
-5/22/2024: /about New request recieved 
-5/22/2024: /about New request recieved 
-5/22/2024: / New request recieved 
-5/22/2024: /about New request recieved 
-5/22/2024: / New request recieved 
-5/22/2024: /about?name=sudhanshu New request recieved 
-5/22/2024: /about?name=sudhanshu New request recieved 
-5/22/2024: /about?name=sudhanshu New request recieved 
-5/22/2024: /about?name=sudhanshu New request recieved 
-5/22/2024: /about?name=sudhanshu New request recieved 
-5/22/2024: /about?name=shrivastava New request recieved 
+5/22/2024: GET /about?name=shrivastava New request recieved 
+5/22/2024: GET /about?name=sudhanshu New request recieved 
+5/22/2024: GET / New request recieved 
+5/22/2024: GET / New request recieved 
+5/22/2024: GET /search?search=hello+word New request recieved 
+5/22/2024: GET /search?search=hello+word New request recieved 
+5/22/2024: GET /search New request recieved 
+5/22/2024: GET /signup New request recieved 

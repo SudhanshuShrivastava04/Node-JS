@@ -5,12 +5,11 @@ import url from "url";
 const myServer = createServer((req, res) => {
   if (req.url == "/favicon.ico") return res.end();
 
-  const log = `${new Date().toLocaleDateString()}: ${
+  const log = `${new Date().toLocaleDateString()}: ${req.method} ${
     req.url
   } New request recieved \n`;
 
   const myUrl = url.parse(req.url, true);
-  console.log(myUrl);
 
   fs.appendFile("log.txt", log, (err, data) => {
     switch (myUrl.pathname) {
@@ -18,8 +17,19 @@ const myServer = createServer((req, res) => {
         res.end("Hello from server, it's a Home Page");
         break;
       case "/about":
-        const userName = myUrl.query.name
+        const userName = myUrl.query.name;
         res.end(`Hello ${userName} from server, it's a About Page`);
+        break;
+      case "/search":
+        const search = myUrl.query.search;
+        res.end("Here are your results for " + search);
+        break;
+      case "/signup":
+        if (req.method === "GET") res.end("Here is the signup page");
+        else if(req.method === "POST"){
+          // db query
+          res.end("You have been signed up");
+        }
         break;
       default:
         res.end("404 not found");
