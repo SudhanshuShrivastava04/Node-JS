@@ -1,6 +1,7 @@
 import { createServer } from "http";
 import fs from "fs";
 import url from "url";
+import express from "express";
 
 //express will handle these http methods for every route
 const handler = (req, res) => {
@@ -38,6 +39,20 @@ const handler = (req, res) => {
     }
   });
 };
-const myServer = createServer(handler);
 
-myServer.listen(8080, () => console.log("Server started!"));
+//handling http methods using express
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello from express, it's a Home Page");
+});
+
+app.get("/about", (req, res) => {
+  res.send("Hello " + req.query.name + " from express, it's a About Page");
+});
+
+app.listen(8080, () => console.log("Server started!"));
+
+// const myServer = createServer(app);
+
+// myServer.listen(8080, () => console.log("Server started!"));
