@@ -53,6 +53,8 @@ app.get("/about", (req, res) => {
 
 app.listen(8080, () => console.log("Server started!"));
 
+
+// this is Url module method for server 
 // const myServer = createServer(app);
 
 // myServer.listen(8080, () => console.log("Server started!"));
