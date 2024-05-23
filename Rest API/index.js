@@ -1,8 +1,12 @@
 import express from "express";
 import users from "./Fake_DB.json" assert { type: "json" };
+import fs from "fs";
 
 const app = express();
 const PORT = 8000;
+
+//Middleware - plugin
+app.use(express.urlencoded({ extended: false }));
 
 //Routes
 app.get("/users", (req, res) => {
@@ -79,6 +83,19 @@ app.get("/api/users", (req, res) => {
 });
 
 app
+  .route("/api/users")
+  .get((req, res) => {
+    return res.json(users);
+  })
+  .post((req, res) => {
+    const body = req.body;
+    users.push({ ...body, id: users.length + 1 });
+    fs.writeFile("./Fake_DB.json", JSON.stringify(users), (err, data) => {
+      return res.json({ status: "success", id: users.length });
+    });
+  });
+
+app
   .route("/api/users/:id")
   .get((req, res) => {
     const id = Number(req.params.id);
@@ -86,17 +103,55 @@ app
     return res.json(user);
   })
   .patch((req, res) => {
-    //TODO: Edit the user with id
-    return res.json({ status: "pending" });
+    const id = Number(req.params.id);
+    const updates = req.body;
+    const userIndex = users.findIndex((user) => user.id === id);
+
+    if (userIndex === -1) {
+      return res
+        .status(404)
+        .json({ status: "error", message: "User not found" });
+    }
+
+    const updatedUser = { ...users[userIndex], ...updates };
+    users[userIndex] = updatedUser;
+
+    fs.writeFile("./Fake_DB.json", JSON.stringify(users, null, 2), (err) => {
+      if (err) {
+        return res
+          .status(500)
+          .json({ status: "error", message: "Failed to update database" });
+      }
+      return res.json({
+        status: "success",
+        message: "User updated successfully",
+        user: updatedUser,
+      });
+    });
   })
   .delete((req, res) => {
-    //TODO: Delete the user with id
-    return res.json({ status: "pending" });
-  });
+    const id = Number(req.params.id);
+    const userIndex = users.findIndex((user) => user.id === id);
 
-app.post("/api/users", (req, res) => {
-  //TODO: Create new user
-  return res.json({ status: "pending" });
-});
+    if (userIndex === -1) {
+      return res
+        .status(404)
+        .json({ status: "error", message: "User not found" });
+    }
+
+    users.splice(userIndex, 1);
+
+    fs.writeFile("./Fake_DB.json", JSON.stringify(users, null, 2), (err) => {
+      if (err) {
+        return res
+          .status(500)
+          .json({ status: "error", message: "Failed to update database" });
+      }
+      return res.json({
+        status: "success",
+        message: "User deleted successfully",
+      });
+    });
+  });
 
 app.listen(PORT, () => console.log(`Server started at PORT: ${PORT}`));

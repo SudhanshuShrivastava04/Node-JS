@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "first_name": "Prudy",
-    "last_name": "Waight",
+    "first_name": "Sudhanshu",
+    "last_name": "Shrivastava",
     "email": "pwaight0@noaa.gov",
-    "gender": "Female",
+    "gender": "Male",
     "job_title": "Product Engineer"
   },
   {
@@ -7998,5 +7998,29 @@
     "email": "lphilippaultrr@live.com",
     "gender": "Female",
     "job_title": "Graphic Designer"
+  },
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "example@gmail.com",
+    "gender": "Male",
+    "job_title": "SDE - I",
+    "id": 1002
+  },
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "example@gmail.com",
+    "gender": "Male",
+    "job_title": "SDE - I",
+    "id": 1003
+  },
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "example@gmail.com",
+    "gender": "Male",
+    "job_title": "SDE - I",
+    "id": 1004
   }
 ]
