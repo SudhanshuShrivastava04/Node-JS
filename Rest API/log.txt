@@ -1,0 +1,15 @@
+5/26/2024 : POST : /api/users 
+5/26/2024 : GET : /api/users 
+5/26/2024 : GET : /api/users/1002 
+5/26/2024 : GET : /api/users/1003 
+5/26/2024 : GET : /api/users/1004 
+5/26/2024 : GET : /api/users/1005 
+5/26/2024 : DELETE : /api/users/1001 
+5/26/2024 : DELETE : /api/users/1 
+5/26/2024 : GET : /api/users 
+5/26/2024 : PATCH : /api/users/1 
+5/26/2024 : PATCH : /api/users/2 
+5/26/2024 : GET : /api/users 
+5/26/2024 : POST : /api/users 
+5/26/2024 : POST : /api/users 
+5/26/2024 : POST : /api/users 

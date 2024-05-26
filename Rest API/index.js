@@ -8,6 +8,16 @@ const PORT = 8000;
 //Middleware - plugin
 app.use(express.urlencoded({ extended: false }));
 
+app.use((req, res, next) => {
+  fs.appendFile(
+    "log.txt",
+    `${new Date().toLocaleDateString()} : ${req.method} : ${req.path} \n`,
+    (err, data) => {
+      next();
+    }
+  );
+});
+
 //Routes
 app.get("/users", (req, res) => {
   const html = `
@@ -89,9 +99,18 @@ app
   })
   .post((req, res) => {
     const body = req.body;
+    if (
+      !body ||
+      !body.first_name ||
+      !body.last_name ||
+      !body.email ||
+      !body.gender ||
+      !body.job_title
+    )
+      return res.status(400).json({ message: "All fields are required" });
     users.push({ ...body, id: users.length + 1 });
     fs.writeFile("./Fake_DB.json", JSON.stringify(users), (err, data) => {
-      return res.json({ status: "success", id: users.length });
+      return res.status(201).json({ status: "success", id: users.length });
     });
   });
 
