@@ -29,3 +29,17 @@
 5/27/2024 : GET : /api/users 
 5/27/2024 : DELETE : /api/users/6653977f016315b09b174865 
 5/27/2024 : GET : /api/users 
+5/28/2024 : GET : /users/ 
+5/28/2024 : GET : /users/ 
+5/28/2024 : POST : /api/users 
+5/28/2024 : POST : /users 
+5/28/2024 : GET : /users 
+5/28/2024 : POST : /users 
+5/28/2024 : GET : /users 
+5/28/2024 : GET : /users/6655773b49c36242614bd015 
+5/28/2024 : DELETE : /users/6653982feb18b78650dbaba5 
+5/28/2024 : GET : /users 
+5/28/2024 : PATCH : /api/users/6655773b49c36242614bd015 
+5/28/2024 : PATCH : /users/6655773b49c36242614bd015 
+5/28/2024 : GET : /users/ 
+5/28/2024 : GET : /api/users/ 
